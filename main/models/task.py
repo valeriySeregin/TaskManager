@@ -20,5 +20,9 @@ class Task(models.Model):
     state = models.CharField(
         max_length=20, default=States.NEW_TASK, choices=States.choices
     )
-    task_creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name="creators")
-    task_performer = models.ForeignKey(User, on_delete=models.CASCADE, related_name="performers")
+    task_creator = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="creators"
+    )
+    task_performer = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="performers"
+    )
